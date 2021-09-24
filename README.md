@@ -21,7 +21,7 @@ Assume que atenda aos pré-requisitos informados acima para seguir com os passos
 Clonando o repositório
 
 ```sh
-$ git clone https://github.com/edujudici/laravel-dockerize-environment.git
+$ git clone https://github.com/edujudici/sendinblue-mail.git & cd sendinblue
 ```
 
 Executar o shell script de instalação
@@ -60,7 +60,20 @@ Os seguintes passos serão executados para o funcionamento do sistema:
     ```sh
     $ docker-compose exec app php artisan migrate
     ```
-    
+
+### Configurar envio de e-mail
+
+ - Criar conta [sendinblue](https://www.sendinblue.com/)
+ - Criar nova SMTP Key e configurar o .env. Ex:
+     ```sh
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp-relay.sendinblue.com
+    MAIL_PORT=587
+    MAIL_USERNAME=<yout email>
+    MAIL_PASSWORD=<your master password>
+    MAIL_ENCRYPTION=tls
+    ```
+
 License
 ----
 
